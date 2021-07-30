@@ -203,7 +203,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Create By: Syamsul Albahri<br>Copyright &copy; Rumah Makan. Sunda Ruchzati 2021</span>
+                        <span>Create By: Syamsul Bahri<br>Copyright &copy; Rumah Makan. Sunda Ruchzati 2021</span>
                     </div>
                 </div>
             </footer>
