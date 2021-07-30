@@ -9,7 +9,7 @@
     <meta name="author" content="">
 
     <title>Beranda</title>
-
+    <link href="{{ asset('asset/vendor/select2/dist/css/select2.min.css')}}" rel="stylesheet">
     <link href="{{ asset('asset/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
@@ -32,7 +32,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand text-white d-flex align-items-center justify-content-center" href="#">
                 <div class="sidebar-brand-icon rotate-n-0">
-                    <img src="{{asset('asset/img/logo_ubsi.jpeg')}}" width="60">
+                    <img src="{{asset('asset/img/logo.jpeg')}}" width="60">
                 </div>
                 <div class="sidebar-brand-text mx-2">RM Sunda RUCHZATI</div>
             </a>
@@ -43,54 +43,61 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
+            <li class="nav-item">
+                <a class="nav-link text-white" href="{{route("dashboard")}}">
+                    <i class="fa fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+            @role('admin')
+            <li class="nav-item">
+                <a class="nav-link text-white" href="{{route("user.index")}}">
+                    <i class="fas fa-user-alt"></i>
+                    <span>Data Pengguna</span></a>
+            </li>
+            @endrole
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed text-white" href="#" data-toggle="collapse" data-target="#collapsePages"
+                <a class="nav-link collapsed text-white" href="{{route("user.index")}}" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder-open"></i>
-                    <span>Menu Utama 1</span>
+                    <span>Menu Master</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item fas fa-arrow-circle-right" href="{{route("user.index")}}"> Data Pengguna</a>
-                        <a class="collapse-item fas fa-arrow-circle-right" href="#"> Sub Menu 2</a>
-                        <a class="collapse-item fas fa-arrow-circle-right" href="#"> Sub Menu 3</a>
-                        <a class="collapse-item fas fa-arrow-circle-right" href="#"> Sub Menu 4</a>
-                        <a class="collapse-item fas fa-arrow-circle-right" href="#"> Sub Menu 5</a>
+                        <a class="collapse-item fas fa-folder" href="{{route("barang.index")}}">   Master Barang </a>
+                        <a class="collapse-item fas fa-arrow-circle-right" href="{{route("barang_masuk.index")}}"> Barang masuk</a>
+                        <a class="collapse-item fas fa-arrow-circle-left" href="{{route("barang_keluar.index")}}"> Barang Keluar</a>
+                        {{-- <a class="collapse-item fas fa-arrow-circle-right" href="#"> Sub Menu 4</a>
+                        <a class="collapse-item fas fa-arrow-circle-right" href="#"> Sub Menu 5</a> --}}
                     </div>
                 </div>
             </li>
+            @role('admin')
             <li class="nav-item">
-                <a class="nav-link collapsed text-white" href="#" data-toggle="collapse" data-target="#collapsePages1"
+                <a class="nav-link collapsed text-white" href="{{route("laporan.barang_masuk")}}" data-toggle="collapse" data-target="#collapsePages1"
                     aria-expanded="true" aria-controls="collapsePages1">
-                    <i class="fas fa-fw fa-folder-open"></i>
-                    <span>Menu Utama 2</span>
+                    <i class="far fa-file-pdf"></i>
+                    <span>Laporan</span>
                 </a>
                 <div id="collapsePages1" class="collapse" aria-labelledby="headingPages"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item fas fa-arrow-circle-right" href="#"> Sub Menu 1</a>
-                        <a class="collapse-item fas fa-arrow-circle-right" href="#"> Sub Menu 2</a>
-                        <a class="collapse-item fas fa-arrow-circle-right" href="#"> Sub Menu 3</a>
-                        <a class="collapse-item fas fa-arrow-circle-right" href="#"> Sub Menu 4</a>
-                        <a class="collapse-item fas fa-arrow-circle-right" href="#"> Sub Menu 5</a>
+                        <a class="collapse-item fas fa-arrow-circle-right" href="{{route("laporan.barang_masuk")}}">  Barang Masuk</a>
+                        <a class="collapse-item fas fa-arrow-circle-left" href="{{route("laporan.barang_keluar")}}">  Barang keluar</a>
+                        
                     </div>
                 </div>
             </li>
+            @endrole
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link text-white" href="#">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Menu Utama 3</span></a>
-            </li>
+            {{-- <li class="nav-item">
+                <a class="nav-link text-white" href="/pengaturan/1">
+                    <i class="fas fa-cog"></i>
+                    <span>Pengaturan</span></a>
+            </li> --}}
 
-            <li class="nav-item">
-                <a class="nav-link text-white" href="#">
-                    <i class="fas fa-fw fa-archive"></i>
-                    <span>Menu Utama 4</span></a>
-            </li>
-
+           
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -164,11 +171,11 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                {{-- <a class="dropdown-item" href="#">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
-                                <div class="dropdown-divider"></div>
+                                <div class="dropdown-divider"></div> --}}
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
@@ -196,7 +203,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Create By: Your Name<br>Copyright &copy; Your Website 2020</span>
+                        <span>Create By: Syamsul Albahri<br>Copyright &copy; Rumah Makan. Sunda Ruchzati 2021</span>
                     </div>
                 </div>
             </footer>
@@ -258,6 +265,9 @@
     <script src="asset/js/demo/chart-area-demo.js"></script>
     <script src="asset/js/demo/chart-pie-demo.js"></script>
     <script src="asset/js/demo/datatables-demo.js"></script>
+    <script src="{{asset('asset/vendor/select2/dist/js/select2.min.js')}}"></script>
+    @yield('scripts')
+
 </body>
 
 </html>

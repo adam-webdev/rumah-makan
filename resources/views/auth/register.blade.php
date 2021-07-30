@@ -29,7 +29,7 @@
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Sistem Informasi Inventory<br>Rumah makan sunda Ruchzati<br>
-                                            <br><img src="{{ asset('asset/img/logo_ubsi.jpeg')}}" width="160"></h1>
+                                            <br><img src="{{ asset('asset/img/logo.jpeg')}}" width="160"></h1>
                                     </div>
                                     <form method="POST" action="{{ route('register') }}">
                                         @csrf
