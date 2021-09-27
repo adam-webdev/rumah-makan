@@ -32,9 +32,9 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand text-white d-flex align-items-center justify-content-center" href="#">
                 <div class="sidebar-brand-icon rotate-n-0">
-                    <img src="{{asset('asset/img/logo.jpeg')}}" width="60">
+                    <img src="{{asset('asset/img/rm.jpeg')}}" width="60">
                 </div>
-                <div class="sidebar-brand-text mx-2">RM Sunda RUCHZATI</div>
+                <div class="sidebar-brand-text mx-2">Rumah makan </div>
             </a>
 
             <!-- Divider -->
@@ -128,7 +128,7 @@
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
                             <div class="input-group-append">
-                                <h4>Sistem Informasi Inventory Rumah Makan Sunda Ruchzati</h4>
+                                <h4>Sistem inventory rumah makan</h4>
                             </div>
                         </div>
                     </form>
@@ -203,7 +203,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Create By: Syamsul Bahri<br>Copyright &copy; Rumah Makan. Sunda Ruchzati 2021</span>
+                        <span>Create By: Adam-webdev<br>Copyright &copy; Rumah Makan. 2021</span>
                     </div>
                 </div>
             </footer>
